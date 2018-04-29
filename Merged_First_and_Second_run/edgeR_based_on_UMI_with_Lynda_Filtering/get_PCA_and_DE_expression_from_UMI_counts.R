@@ -56,8 +56,8 @@ table_for_PCA=cpm(table) #apply CPM filtering on the raw data
 
 Threshold=10
 
-check=table_for_PCA>Threshold
-keep=which( (rowSums(countCheck[,1:4]) >= 4) | (rowSums(countCheck[,5:8]) >= 4) )
+Check=table_for_PCA>Threshold
+keep=which( (rowSums(Check[,1:4]) >= 4) | (rowSums(Check[,5:8]) >= 4) )
 table_for_PCA=table_for_PCA[keep,]
 
 ##########################################################################
