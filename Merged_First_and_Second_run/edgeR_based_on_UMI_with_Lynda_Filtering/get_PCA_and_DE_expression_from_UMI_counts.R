@@ -214,9 +214,9 @@ number_of_genes_upregulated=dim(upregulated)[1]
 number_of_genes_downregulated=dim(downregulated)[1]
 
 p6 <- ggplot() + geom_point(aes(correctedData$logFC,-log10(correctedData$FDR)), color=ifelse(correctedData$FDR>0.05,not_significant,ifelse(correctedData$logFC<=-1,upregulated_in_large,ifelse(correctedData$logFC>=1,upregulated_in_small,significant_but_small_effect_size))))
-p6 <- p6 + labs(title="Volcano plot for miRNA expression after MTC",x=a,y=b)+theme(plot.title = element_text(hjust = 0.5))
-p6 <- p6 + annotate("text",x = 3, y = 3, label =paste("n=",number_of_genes_upregulated) ,color=upregulated_in_small)
-p6 <- p6 + annotate("text", x=-5,y=3, label =paste("n=",number_of_genes_downregulated) ,color=upregulated_in_large)
+p6 <- p6 + labs(title="Volcano plot for miRNA expression after FDR correction",x=a,y=b)+theme(plot.title = element_text(hjust = 0.5))
+p6 <- p6 + annotate("text",x = 2, y = 2, label =paste("n=",number_of_genes_upregulated) ,color=upregulated_in_small)
+p6 <- p6 + annotate("text", x=-2.5,y=2, label =paste("n=",number_of_genes_downregulated) ,color=upregulated_in_large)
 p6
 
 
